@@ -28,7 +28,7 @@ app.post("/add", (req, res) => {
 })
 
 app.delete("/delete/:id", (req, res) => {
-    Todo.deleteOne({ id: req.params.id }, (err, delet) => {
+    Todo.deleteOne({ _id: req.params.id }, (err, delet) => {
         if (err) {
             console.log("ERROR", err)
         } else {
@@ -38,6 +38,20 @@ app.delete("/delete/:id", (req, res) => {
                 res.json(req.params.id + " Task has been Deleted");
             }
 
+        }
+    })
+})
+
+app.put("/edit/task/:id", (req, res) => {
+    Todo.updateOne({ _id: req.params.id }, { title: req.body.newTitle }, (err, upObj) => {
+        if (err) {
+            console.log("ERROR", err);
+            res.status(350).json('Task title Validation Failed');
+        } else {
+            upObj.matchedCount === 1
+                ? res.json("Task title has been Edited to " + req.body.newTitle)
+                : res.status(404).json("Task title hasn't been found")
+                ;
         }
     })
 })
