@@ -48,7 +48,7 @@ app.put("/edit/task/:id", (req, res) => {
             console.log("ERROR", err);
             res.status(350).json('Task title Validation Failed');
         } else {
-            upObj.matchedCount === 1
+            upObj.modifiedCount === 1
                 ? res.json("Task title has been Edited to " + req.body.newTitle)
                 : res.status(404).json("Task title hasn't been found")
                 ;
@@ -104,14 +104,14 @@ app.delete("/delCompleted", (req, res) => {
     })
 })
 
-app.put("/editComp/:id", (req, res) => {
-    Todo.updateOne({ _id: req.params.id }, { isCompleted: req.body.newState }, (err, edit) => {
+app.put("/editTask/:id/:isCompleted", (req, res) => {
+    Todo.updateOne({ _id: req.params.id }, { isCompleted: req.params.isCompleted }, (err, edit) => {
         if (err) {
             console.log("ERROR", err);
             res.status(350).json('Task title Validation Failed');
         } else {
-            edit.matchedCount === 1
-                ? res.json("Task STATE has been Changed to " + req.body.newState)
+            edit.modifiedCount === 1
+                ? res.json("Task STATE has been Changed to " + req.params.isCompleted)
                 : res.status(404).json("Task ID hasn't been found")
                 ;
         }
