@@ -108,11 +108,11 @@ app.put("/editTask/:id/:isCompleted", (req, res) => {
     Todo.updateOne({ _id: req.params.id }, { isCompleted: req.params.isCompleted }, (err, edit) => {
         if (err) {
             console.log("ERROR", err);
-            res.status(350).json('Task title Validation Failed');
+            res.status(350).json('Task ID Validation Failed');
         } else {
             edit.modifiedCount === 1
                 ? res.json("Task STATE has been Changed to " + req.params.isCompleted)
-                : res.status(404).json("Task ID hasn't been found")
+                : res.status(404).json("Task is allready " + req.params.isCompleted)
                 ;
         }
     })
