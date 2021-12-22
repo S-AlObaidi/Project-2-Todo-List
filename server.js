@@ -19,7 +19,7 @@ app.post("/add", (req, res) => {
     Todo.create(req.body, (err, newData) => {
         if (err) {
             console.log("ERROR", err);
-            res.status(350).json('User Validation Failed')
+            res.status(350).json('Todo task Validation Failed')
         } else {
             res.json("Created new Todo Successfully")
         }
