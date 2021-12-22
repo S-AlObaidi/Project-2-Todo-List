@@ -27,6 +27,21 @@ app.post("/add", (req, res) => {
     });
 })
 
+app.delete("/delete/:id", (req, res) => {
+    Todo.deleteOne({ id: req.params.id }, (err, delet) => {
+        if (err) {
+            console.log("ERROR", err)
+        } else {
+            if (delet.deletedCount == 0) {
+                res.json(req.params.id + " Task Can't be found");
+            } else {
+                res.json(req.params.id + " Task has been Deleted");
+            }
+
+        }
+    })
+})
+
 app.listen(3000, () => {
     console.log("SERVER ARE WORKING ...")
 })
