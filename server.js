@@ -56,6 +56,68 @@ app.put("/edit/task/:id", (req, res) => {
     })
 })
 
+// ---------------------------------------------------------------------------------
+// We can replace these two GETs with One (GET filter)
+app.get("/completed", (req, res) => {
+    Todo.find({ isCompleted: true }, (err, data) => {
+        if (err) {
+            console.log("ERROR");
+        } else {
+            res.status(200).json(data);
+        }
+    })
+})
+
+app.get("/not_completed", (req, res) => {
+    Todo.find({ isCompleted: false }, (err, data) => {
+        if (err) {
+            console.log("ERROR");
+        } else {
+            res.status(200).json(data);
+        }
+    })
+})
+// ------------------------------------------------------------------------------------
+
+//     (GET filter)
+//              ?key=value&key=value
+app.get("/filter", (req, res) => {
+    Todo.find({ isCompleted: req.query.isCompleted }, (err, data) => {
+        if (err) {
+            console.log("ERROR");
+        } else {
+            res.status(200).json(data);
+        }
+    })
+})
+
+app.delete("/delCompleted", (req, res) => {
+    Todo.deleteMany({ isCompleted: true }, (err, del) => {
+        if (err) {
+            console.log("ERROR")
+        } else {
+            del.deletedCount === 0
+                ? res.status(200).json("Can't find Any COMPLETED Tasks")
+                : res.json("Delete All COMPLETED Task Successfully")
+            // console.log(del)
+        }
+    })
+})
+
+app.put("/editComp/:id", (req, res) => {
+    Todo.updateOne({ _id: req.params.id }, { isCompleted: req.body.newState }, (err, edit) => {
+        if (err) {
+            console.log("ERROR", err);
+            res.status(350).json('Task title Validation Failed');
+        } else {
+            edit.matchedCount === 1
+                ? res.json("Task STATE has been Changed to " + req.body.newState)
+                : res.status(404).json("Task ID hasn't been found")
+                ;
+        }
+    })
+})
+
 app.listen(3000, () => {
     console.log("SERVER ARE WORKING ...")
 })
