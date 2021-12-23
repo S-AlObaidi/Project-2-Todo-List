@@ -1,9 +1,13 @@
 const express = require('express');
 const { handle } = require('express/lib/application');
 const app = express()
-app.use(express.json());
 const db = require("./db")
 const Todo = require("./models/Todo")
+const cors = require("cors");
+
+app.use(express.json());
+app.use(cors());
+
 
 app.get("/all", (req, res) => {
     Todo.find({}, (err, data) => {
@@ -118,6 +122,6 @@ app.put("/editTask/:id/:isCompleted", (req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     console.log("SERVER ARE WORKING ...")
 })

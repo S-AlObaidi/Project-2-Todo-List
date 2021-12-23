@@ -1,0 +1,23 @@
+.App {
+  border: solid red 5px;
+}
+
+.Todo {
+  border: solid blue 3px;
+  text-align: center;
+}
+
+.id {
+  background-color: silver;
+  margin: 0px;
+}
+
+.title {
+  margin: 0px;
+  background-color: lightsalmon;
+}
+
+.status {
+  margin: 0px;
+  background-color: lightseagreen;
+}
