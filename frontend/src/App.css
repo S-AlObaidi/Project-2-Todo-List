@@ -4,7 +4,9 @@
 
 .Todo {
   border: solid blue 3px;
-  text-align: center;
+  /* text-align: justify; */
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, 1fr); */
 }
 
 .id {
@@ -15,9 +17,23 @@
 .title {
   margin: 0px;
   background-color: lightsalmon;
+  /* text-decoration: line-through; */
 }
 
 .status {
   margin: 0px;
   background-color: lightseagreen;
+}
+
+.del-btn{
+  margin: 0px 0px 0px 10px;
+}
+
+.Add{
+  border: solid green 3px;
+}
+
+.Delete{
+  border: solid purple 3px;
+  margin: 0px;
 }
