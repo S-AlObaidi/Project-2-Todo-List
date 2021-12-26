@@ -28,6 +28,7 @@ function App() {
       .then((response) => {
         console.log("DATA: ", response.data);
         getData();
+        refreshPage();
       })
       .catch((err) => {
         console.log("ERROR: ", err);
@@ -66,6 +67,11 @@ function App() {
   const mapOverTasks = tasks.map((taskObj, i) => (
     <Todo key={i} task={taskObj} delTask={delTodo} chng={chngIs} />
   ))
+
+  const refreshPage = () => {
+    window.location.reload(false);
+  }
+
 
   return (
     <div className='Main'>
