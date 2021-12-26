@@ -44,15 +44,28 @@ function App() {
       .catch((err) => {
         console.log("ERROR: ", err);
       });
-  } 
+  }
+
+  const chngIs = (id, isCompleted) => {
+    axios
+      .put(`http://localhost:5000/editTask/${id}/${!isCompleted}`)
+      .then((response) => {
+        console.log("DATA: ", response.data);
+        getData();
+      })
+      .catch((err) => {
+        console.log("ERROR: ", err);
+      });
+  }
+
 
   useEffect(() => {
     getData();
   }, [])
 
-const mapOverTasks = tasks.map((taskObj, i)=>(
-  <Todo key={i} task={taskObj} delTask={delTodo}/>
-))
+  const mapOverTasks = tasks.map((taskObj, i) => (
+    <Todo key={i} task={taskObj} delTask={delTodo} chng={chngIs} />
+  ))
 
   return (
     <div className="App">
