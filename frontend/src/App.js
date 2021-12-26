@@ -68,14 +68,17 @@ function App() {
   ))
 
   return (
-    <div className="App">
+    <div className='Main'>
+      <p>To Do List 🎈</p>
+      <div className="App">
 
-      <button className='btn_1' onClick={getData}>GET TASKS</button>
+        {/* <button className='btn_1' onClick={getData}>GET TASKS</button> */}
 
-      <Add postNewTodo={postNewTodo} />
-      {mapOverTasks}
+        <Add postNewTodo={postNewTodo} />
+        {mapOverTasks}
 
 
+      </div>
     </div>
   );
 }

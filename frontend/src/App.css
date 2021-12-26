@@ -1,12 +1,37 @@
+.Main{
+  background-color: black;
+  padding: 50px;
+  text-align: center;
+  font-size: 40px;
+  font-family: cursive;
+}
+
+.Main>p{
+  background-color: black;
+  color: white;
+}
+
 .App {
-  border: solid red 5px;
+  border: groove lightskyblue 5px;
+  border-radius: 25px;
+  text-align: center;
+  background-color: rgb(48, 48, 48);
+  padding: 25px;
 }
 
 .Todo {
-  border: solid blue 3px;
-  /* text-align: justify; */
-  /* display: grid; */
-  /* grid-template-columns: repeat(3, 1fr); */
+  border: solid gray 3px;
+  background-color: rgb(65, 65, 65);
+  border-radius: 25px;
+  text-align: justify;
+  display: grid;
+  grid-template-columns: 1fr 40fr 3fr;
+  grid-template-rows: auto;
+  padding: 15px;
+  margin: 15px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: white;
 }
 
 .id {
@@ -30,9 +55,15 @@
 }
 
 .Add{
-  border: solid green 3px;
+  border: solid gray 3px;
+  background-color: rgb(65, 65, 65);
+  border-radius: 25px;
+  text-align: start;
+  padding: 15px;
 }
-
+.Add-btn{
+  margin: 0px 0px 0px 15px;
+}
 .Delete{
   border: solid purple 3px;
   margin: 0px;
