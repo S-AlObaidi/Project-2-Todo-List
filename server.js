@@ -123,7 +123,7 @@ app.put("/editTask/:id/:isCompleted", (req, res) => {
 })
 
 app.delete("/delAll", (req, res) => {
-    Todo.deleteMany({ isCompleted: true && false }, (err, del) => {
+    Todo.deleteMany({ __v: 0 }, (err, del) => {
         if (err) {
             console.log("ERROR")
         } else {

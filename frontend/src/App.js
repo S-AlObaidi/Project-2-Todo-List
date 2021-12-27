@@ -65,7 +65,11 @@ function App() {
   }, [])
 
   const mapOverTasks = tasks.map((taskObj, i) => (
-    <Todo key={i} task={taskObj} delTask={delTodo} chng={chngIs} />
+    <Todo
+      key={taskObj._id}
+      task={taskObj}
+      delTask={delTodo}
+      chng={chngIs} />
   ))
 
   const refreshPage = () => {
@@ -84,16 +88,28 @@ function App() {
       });
   }
 
+  const delComp = () => {
+    axios
+      .delete(`http://localhost:5000/delCompleted`)
+      .then((response) => {
+        console.log("DATA: ", response.data);
+        getData();
+      })
+      .catch((err) => {
+        console.log("ERROR: ", err);
+      });
+  }
+
   const getpend = (status) => {
     axios
-    .get(`http://localhost:5000/filter?isCompleted=${status}`)
-    .then((response) => {
-      console.log("DATA: ", response.data);
-      setTasks(response.data);
-    })
-    .catch((err) => {
-      console.log("ERROR: ", err);
-    });
+      .get(`http://localhost:5000/filter?isCompleted=${status}`)
+      .then((response) => {
+        console.log("DATA: ", response.data);
+        setTasks(response.data);
+      })
+      .catch((err) => {
+        console.log("ERROR: ", err);
+      });
   }
 
   return (
@@ -103,7 +119,7 @@ function App() {
 
         <button className='btn_1' onClick={getData}>GET TASKS</button>
 
-        <Add postNewTodo={postNewTodo} delAll={deleteAll} getpend={getpend} />
+        <Add postNewTodo={postNewTodo} delAll={deleteAll} delComp={delComp} getpend={getpend} />
         {mapOverTasks}
 
 

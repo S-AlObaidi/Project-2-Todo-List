@@ -17,6 +17,10 @@ export default function Add(props) {
         props.delAll();
     }
 
+    const delcomp = () => {
+        props.delComp();
+    }
+
     const getfinish = () => {
         props.getpend(true);
     }
@@ -28,8 +32,8 @@ export default function Add(props) {
     return (
         <div className='Add'>
             <input type="text" placeholder='Write new task 🖊' onChange={(e) => { setNewTitle(e.target.value) }} />
-            <button className='Add-btn' onClick={createTodo}>Create new task ✅</button>
-            <Delete deleteAll={deleteAll} getfinsh={getfinish} getpend={getpend} />
+            <button type='submit' className='Add-btn' onClick={createTodo}>Create new task ✅</button>
+            <Delete deleteAll={deleteAll} delcomp={delcomp} getfinsh={getfinish} getpend={getpend} />
         </div>
     )
 }
