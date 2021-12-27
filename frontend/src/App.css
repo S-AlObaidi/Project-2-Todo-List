@@ -53,6 +53,21 @@
 
 .del-btn{
   margin: 0px 0px 0px 10px;
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.del-btn:hover{
+  background-color: rgb(136, 0, 0);
+  color: white;
 }
 
 .Add{
@@ -64,8 +79,80 @@
 }
 .Add-btn{
   margin: 0px 0px 0px 15px;
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 2px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
 }
+
+.Add-btn:hover{
+  background-color: rgb(0, 73, 0);
+  color: white;
+}
+
 .Delete{
-  border: solid purple 3px;
+  /* border: solid purple 3px; */
   margin: 0px;
+}
+
+.del-all-btn{
+  background-color: rgb(196, 13, 13);
+  border: none;
+  color: white;
+  padding: 2px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.del-all-btn:hover{
+  background-color: rgb(78, 0, 0);
+  color: white;
+}
+
+.get-comp{
+  margin: 0px 0px 0px 15px;
+  background-color: rgb(12, 78, 221);
+  border: none;
+  color: white;
+  padding: 2px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.get-comp:hover{
+  background-color: rgb(0, 75, 145);
+  color: white;
+}
+
+.get-pend{
+  margin: 0px 0px 0px 15px;
+  background-color: rgb(192, 145, 17);
+  border: none;
+  color: white;
+  padding: 2px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.get-pend:hover{
+  background-color: rgb(129, 98, 13);
+  color: white;
 }

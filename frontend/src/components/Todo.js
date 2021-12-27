@@ -12,7 +12,7 @@ export default function Todo(props) {
         <div className='Todo'>
             <input type="checkbox" defaultChecked={isCompleted} onClick={chngSta} />
             <span style={{ textDecoration: isCompleted ? "line-through" : "none" }}> {title}</span>
-            <button onClick={delTask} className='del-btn'>❌</button>
+            <button onClick={delTask} className='del-btn'>Delete</button>
         </div>
     )
 }

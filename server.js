@@ -122,6 +122,20 @@ app.put("/editTask/:id/:isCompleted", (req, res) => {
     })
 })
 
+app.delete("/delAll", (req, res) => {
+    Todo.deleteMany({ isCompleted: true && false }, (err, del) => {
+        if (err) {
+            console.log("ERROR")
+        } else {
+            del.deletedCount === 0
+                ? res.status(200).json("Can't find Any COMPLETED Tasks")
+                : res.json("Delete All Tasks Successfully")
+            // console.log(del)
+        }
+    })
+})
+
+
 app.listen(5000, () => {
     console.log("SERVER ARE WORKING ...")
 })

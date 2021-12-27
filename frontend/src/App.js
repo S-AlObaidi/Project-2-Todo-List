@@ -72,15 +72,38 @@ function App() {
     window.location.reload(false);
   }
 
+  const deleteAll = () => {
+    axios
+      .delete(`http://localhost:5000/delAll`)
+      .then((response) => {
+        console.log("DATA: ", response.data);
+        getData();
+      })
+      .catch((err) => {
+        console.log("ERROR: ", err);
+      });
+  }
+
+  const getpend = (status) => {
+    axios
+    .get(`http://localhost:5000/filter?isCompleted=${status}`)
+    .then((response) => {
+      console.log("DATA: ", response.data);
+      setTasks(response.data);
+    })
+    .catch((err) => {
+      console.log("ERROR: ", err);
+    });
+  }
 
   return (
     <div className='Main'>
       <p>To Do List 🎈</p>
       <div className="App">
 
-        {/* <button className='btn_1' onClick={getData}>GET TASKS</button> */}
+        <button className='btn_1' onClick={getData}>GET TASKS</button>
 
-        <Add postNewTodo={postNewTodo} />
+        <Add postNewTodo={postNewTodo} delAll={deleteAll} getpend={getpend} />
         {mapOverTasks}
 
 
