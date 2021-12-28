@@ -5,7 +5,6 @@ import Todo from './components/Todo';
 import Add from './components/Add';
 
 
-
 function App() {
 
   const [tasks, setTasks] = useState([]);

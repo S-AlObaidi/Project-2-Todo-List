@@ -3,6 +3,7 @@ const { handle } = require('express/lib/application');
 const app = express()
 const db = require("./db")
 const Todo = require("./models/Todo")
+const User = require("./models/User")
 const cors = require("cors");
 
 app.use(express.json());
@@ -135,6 +136,37 @@ app.delete("/delAll", (req, res) => {
     })
 })
 
+app.post("/register", (req, res) => {
+    User.create(req.body, (err, data) => {
+        if (err) {
+            console.log("ERROR");
+            res.status(400).json({ message: "Email or User already taken" })
+        } else {
+            res.status(201).json({ message: "Create New User Successfully" });
+        }
+    })
+})
+
+app.post("/login", (req, res) => {
+    User.find({ email: req.body.email }, (err, data) => {
+        if (err) {
+            console.log("ERROR", err);
+        } else {
+            if (data.length === 1) {
+                if (req.body.password === data[0].password) {
+                    res.status(200).json({
+                        message: "Login Successfully",
+                        username: data[0].username
+                    })
+                } else {
+                    res.status(400).json({ message: "Wrong Password" })
+                }
+            } else if (data.length === 0) {
+                res.status(404).json({ message: "Email not registered" })
+            }
+        }
+    })
+})
 
 app.listen(5000, () => {
     console.log("SERVER ARE WORKING ...")
