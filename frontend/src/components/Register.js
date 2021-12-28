@@ -8,7 +8,7 @@ export default function Register() {
     const [username, setUsername] = useState([]);
 
     const reg = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         const newUser = {
             email,
