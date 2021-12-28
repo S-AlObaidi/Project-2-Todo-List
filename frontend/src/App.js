@@ -3,6 +3,7 @@ import axios from 'axios'
 import './App.css';
 import Todo from './components/Todo';
 import Add from './components/Add';
+import Register from './components/Register';
 
 
 function App() {
@@ -116,6 +117,7 @@ function App() {
       <p>To Do List 🎈</p>
       <div className="App">
 
+        <Register />
         <button className='btn_1' onClick={getData}>GET TASKS</button>
 
         <Add postNewTodo={postNewTodo} delAll={deleteAll} delComp={delComp} getpend={getpend} />

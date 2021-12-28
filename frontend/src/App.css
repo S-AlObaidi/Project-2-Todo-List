@@ -1,4 +1,4 @@
-.Main{
+.Main {
   background-color: rgb(14, 16, 31);
   padding: 20px 50px 20px 50px;
   text-align: center;
@@ -6,7 +6,7 @@
   font-family: cursive;
 }
 
-.Main>p{
+.Main > p {
   background-color: rgb(14, 16, 31);
   color: white;
   margin: 0px 0px 20px 0px;
@@ -31,7 +31,7 @@
   grid-template-rows: auto;
   padding: 15px;
   margin: 15px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   color: white;
 }
@@ -52,7 +52,7 @@
   background-color: lightseagreen;
 }
 
-.del-btn{
+.del-btn {
   margin: 0px 0px 0px 10px;
   background-color: red;
   border: none;
@@ -66,19 +66,19 @@
   cursor: pointer;
 }
 
-.del-btn:hover{
+.del-btn:hover {
   background-color: rgb(136, 0, 0);
   color: white;
 }
 
-.Add{
+.Add {
   border: solid gray 3px;
   background-color: rgb(65, 65, 65);
   border-radius: 25px;
   text-align: start;
   padding: 15px;
 }
-.Add-btn{
+.Add-btn {
   margin: 0px 0px 0px 15px;
   background-color: green;
   border: none;
@@ -92,18 +92,18 @@
   cursor: pointer;
 }
 
-.Add-btn:hover{
+.Add-btn:hover {
   background-color: rgb(0, 73, 0);
   color: white;
 }
 
-.Delete{
+.Delete {
   /* border: solid purple 3px; */
   margin: 0px;
   text-align: center;
 }
 
-.del-all-btn{
+.del-all-btn {
   background-color: rgb(196, 13, 13);
   margin: 0px 0px 0px 15px;
   border: none;
@@ -117,12 +117,12 @@
   cursor: pointer;
 }
 
-.del-all-btn:hover{
+.del-all-btn:hover {
   background-color: rgb(78, 0, 0);
   color: white;
 }
 
-.get-comp{
+.get-comp {
   margin: 0px 0px 0px 15px;
   background-color: rgb(12, 78, 221);
   border: none;
@@ -136,12 +136,12 @@
   cursor: pointer;
 }
 
-.get-comp:hover{
+.get-comp:hover {
   background-color: rgb(0, 75, 145);
   color: white;
 }
 
-.get-pend{
+.get-pend {
   margin: 0px 0px 0px 15px;
   background-color: rgb(192, 145, 17);
   border: none;
@@ -155,7 +155,14 @@
   cursor: pointer;
 }
 
-.get-pend:hover{
+.get-pend:hover {
   background-color: rgb(129, 98, 13);
   color: white;
+}
+
+.Register {
+  text-align: left;
+}
+.Register > p {
+  margin: 0px;
 }
