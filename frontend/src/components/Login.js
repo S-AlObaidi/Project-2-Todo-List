@@ -22,11 +22,11 @@ export default function Login() {
             });
     }
     return (
-        <div>
+        <div className='Login'>
             <form>
-                <input type="email" value={email} placeholder='E-mail' onChange={(e) => { setEmail(e.target.value) }} />
-                <input type="password" value={password} placeholder='Password' onChange={(e) => { setPassword(e.target.value) }} />
-                <button type="submit" onClick={log}>Login ☑</button>
+                <input type="email" value={email} placeholder='E-mail' onChange={(e) => { setEmail(e.target.value) }} /> <br />
+                <input type="password" value={password} placeholder='Password' onChange={(e) => { setPassword(e.target.value) }} /> <br />
+                <button className='login-btn' type="submit" onClick={log}>Login 🌐</button>
             </form>
         </div>
     )

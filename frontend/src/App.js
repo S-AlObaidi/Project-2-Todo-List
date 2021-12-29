@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react'
+
 import axios from 'axios'
+import { Routes, Route, Link } from "react-router-dom";
+
 import './App.css';
+
 import Todo from './components/Todo';
 import Add from './components/Add';
 import Register from './components/Register';
 import Login from './components/Login';
 
 
-function App() {
+export default function App() {
 
   const [tasks, setTasks] = useState([]);
 
@@ -117,18 +121,18 @@ function App() {
     <div className='Main'>
       <p>To Do List 🎈</p>
       <div className="App">
-
-        <Register />
-        <Login />
-        <button className='btn_1' onClick={getData}>GET TASKS</button>
-
-        <Add postNewTodo={postNewTodo} delAll={deleteAll} delComp={delComp} getpend={getpend} />
-        {mapOverTasks}
+        <Routes>
+          <Route path='home' element={<div className='Home'>
+            <button className='btn_1' onClick={getData}>GET TASKS</button>
+            <Add postNewTodo={postNewTodo} delAll={deleteAll} delComp={delComp} getpend={getpend} />
+            {mapOverTasks}
+          </div>} />
+          <Route path='login' element={<Login />} />
+          <Route path='register' element={<Register />} />
+        </Routes>
 
 
       </div>
     </div>
   );
 }
-
-export default App;
