@@ -4,6 +4,7 @@ import './App.css';
 import Todo from './components/Todo';
 import Add from './components/Add';
 import Register from './components/Register';
+import Login from './components/Login';
 
 
 function App() {
@@ -118,6 +119,7 @@ function App() {
       <div className="App">
 
         <Register />
+        <Login />
         <button className='btn_1' onClick={getData}>GET TASKS</button>
 
         <Add postNewTodo={postNewTodo} delAll={deleteAll} delComp={delComp} getpend={getpend} />
