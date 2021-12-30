@@ -31,8 +31,8 @@ export default function Add(props) {
 
     return (
         <div className='Add'>
-            <input type="text" placeholder='Write new task 🖊' onChange={(e) => { setNewTitle(e.target.value) }} />
-            <button type='submit' className='Add-btn' onClick={createTodo}>Create new task ✅</button>
+            <input className='form-control' type="text" placeholder='Write new task 🖊' onChange={(e) => { setNewTitle(e.target.value) }} />
+            <button type='submit' className='btn btn-success' onClick={createTodo}>Create new task ✅</button>
             <Delete deleteAll={deleteAll} delcomp={delcomp} getfinsh={getfinish} getpend={getpend} />
         </div>
     )

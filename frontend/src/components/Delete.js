@@ -21,10 +21,10 @@ export default function Delete(props) {
 
     return (
         <div className='Delete'>
-            <button onClick={delAl} className='del-all-btn'>Delete ALL tasks</button>
-            <button onClick={getfnsh} className='get-comp'>GET Finshed</button>
-            <button onClick={getpnd} className='get-pend'>GET Pending</button>
-            <button onClick={delComp} className='del-all-btn'>Delete Completed tasks</button>
+            <button onClick={delAl} className='btn btn-danger'>Delete ALL tasks</button>
+            <button onClick={getfnsh} className='btn btn-info'>GET Finshed</button>
+            <button onClick={getpnd} className='btn btn-warning'>GET Pending</button>
+            <button onClick={delComp} className='btn btn-secondary'>Delete Completed tasks</button>
         </div>
     )
 }
