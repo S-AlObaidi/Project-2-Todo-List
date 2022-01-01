@@ -19,12 +19,17 @@ export default function Delete(props) {
         props.getpend();
     }
 
+    const getData = () => {
+        props.getData();
+    }
+
     return (
         <div className='Delete'>
-            <button onClick={delAl} className='btn btn-danger'>Delete ALL tasks</button>
-            <button onClick={getfnsh} className='btn btn-info'>GET Finshed</button>
-            <button onClick={getpnd} className='btn btn-warning'>GET Pending</button>
-            <button onClick={delComp} className='btn btn-secondary'>Delete Completed tasks</button>
+            <button onClick={getData} className='btn btn-primary m-2'>GET ALL TASKS</button>
+            <button onClick={delAl} className='btn btn-danger m-2'>DELETE ALL TASKS</button>
+            <button onClick={getfnsh} className='btn btn-info m-2'>GET FINSHED TASKS</button>
+            <button onClick={getpnd} className='btn btn-warning m-2'>GET PENDING TASKS</button>
+            <button onClick={delComp} className='btn btn-secondary m-2'>DELETE COMPLETED TASKS</button>
         </div>
     )
 }

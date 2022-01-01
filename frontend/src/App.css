@@ -10,26 +10,45 @@
 .Logo-img {
   height: 5vmin;
 }
+.Login-logo {
+  height: 13vmin;
+  margin: 10px 200px 20px 10px;
+}
+.Lo-img {
+  height: 50vmin;
+}
+
+.Greeting {
+  text-align: center;
+  color: white;
+}
 
 .Main {
   background-color: #cccccc;
   background-repeat: repeat;
 }
 
-.Appp {
-  border: groove lightskyblue 5px;
-  border-radius: 25px;
+.Home-1 {
+  /* border: groove lightskyblue 5px; */
+  /* border-radius: 25px; */
   text-align: center;
   background-color: rgb(10, 8, 22);
-  padding: 0px 25px 25px 25px;
-  margin: 0px 60px 0px 60px;
-  font-family: fantasy;
+  padding: 35px;
+  margin: 30px 0px 30px 0px;
 }
 
 .Todo {
-  font-family: "Times New Roman", Times, serif;
+  /* font-family: "Times New Roman", Times, serif; */
   font-size: 20px;
   color: white;
+  padding: 4px;
+  border: groove silver 2px;
+  border-radius: 10px;
+  margin: 20px 0px 0px 0px;
+}
+
+.Red{
+  color: red;
 }
 
 .User-info {
@@ -79,8 +98,9 @@
   border: solid gray 3px;
   background-color: rgb(29, 22, 43);
   border-radius: 25px;
-  /* text-align: start; */
+  text-align: center;
   padding: 15px;
+  margin: 15px;
 }
 .Add-btn {
   margin: 0px 0px 0px 15px;
@@ -102,8 +122,8 @@
 }
 
 .Delete {
-  /* border: solid purple 3px; */
-  margin: 0px;
+  margin: 10px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -167,6 +187,7 @@
 .Register,
 .Login {
   text-align: center;
+  padding: 160px;
 }
 .Register > p {
   margin: 0px;

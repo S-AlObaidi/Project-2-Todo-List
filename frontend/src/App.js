@@ -126,42 +126,43 @@ export default function App() {
   }
 
   return (
-    <div className='App'>
-      <p className='User-info'>{isLoggedIn ? `Hello, ${username}` : ""} <br />
-        {isLoggedIn ? <button className='Logout-btn' type="submit" onClick={logout} >Logout 🦅</button> : ''}
-      </p>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/"><img className='Logo-img' src="https://kolya.convertio.me/p/d5JdV6p5Ft4-H9FHSEhwHQ/1ac2cc792adf2ff1bda47e35b53b5801/todo.svg" alt="" /></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <div className=''>
+      <p className='User-info'>{isLoggedIn ? `Hello, ${username}` : ""}</p>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/"><img className='Logo-img' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/To_Do.svg/2515px-To_Do.svg.png" alt="" /></a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              {isLoggedIn ? <li className="nav-item">
                 <Link className="nav-link active" to="home">Home</Link>
-              </li>
-              <li class="nav-item">
+              </li> : ''}
+              {isLoggedIn ? "" : <li className="nav-item">
                 <Link className="nav-link" to="login">Login</Link>
-              </li>
-              <li class="nav-item">
+              </li>}
+              {isLoggedIn ? "" : <li className="nav-item">
                 <Link className="nav-link" to="register">Register</Link>
-              </li>
+              </li>}
+              {isLoggedIn ? <li className="nav-item">
+                <Link className="nav-link" to="/" onClick={logout}><span className='Red'>Logout</span></Link>
+              </li> : ''}
             </ul>
           </div>
         </div>
       </nav>
-
-      <Routes>
-        <Route path='home' element={<div className='Home'>
-          <button className='btn btn-primary' onClick={getData}>GET TASKS</button>
-          <Add postNewTodo={postNewTodo} delAll={deleteAll} delComp={delComp} getpend={getpend} />
-          {mapOverTasks}
-        </div>} />
-        <Route path='login' element={<Login setIsLoggedIn={setIsLoggedIn}
-          setUsername={setUsername} />} />
-        <Route path='register' element={<Register />} />
-      </Routes>
+      <div className='Home-1'>
+        <Routes>
+          <Route path='home' element={<div className='Home'>
+            <Add postNewTodo={postNewTodo} delAll={deleteAll} delComp={delComp} getpend={getpend} getData={getData} />
+            {mapOverTasks}
+          </div>} />
+          <Route path='login' element={<Login setIsLoggedIn={setIsLoggedIn}
+            setUsername={setUsername} isLoggedIn={isLoggedIn} />} />
+          <Route path='register' element={<Register />} />
+        </Routes>
+      </div>
     </div>
   );
 }

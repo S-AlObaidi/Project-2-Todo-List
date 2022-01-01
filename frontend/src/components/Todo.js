@@ -9,32 +9,26 @@ export default function Todo(props) {
         props.chng(_id, isCompleted);
     }
     return (
-        <div className='App'>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div className='form-check form-switch'>
-                            <input className='form-check-input' type="checkbox" role="switch" id="flexSwitchCheckDefault" defaultChecked={isCompleted} onClick={chngSta} />
+        <div className='Todo'>
+            <ul className="list-group">
+                <li className="list-group-item list-group-item-action list-group-item-dark">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col text-start">
+                                <div className="form-check form-switch">
+                                    <input className="form-check-input" type="checkbox" role="switch" id={_id} defaultChecked={isCompleted} onClick={chngSta} />
+                                </div>
+                            </div>
+                            <div className="col-6 text-start">
+                                <label className="form-check-label" htmlFor={_id} style={{ textDecoration: isCompleted ? "line-through" : "none" }}>{title}</label>
+                            </div>
+                            <div className="col text-end">
+                                <button onClick={delTask} className='btn btn-outline-danger'><i className="bi bi-trash-fill"></i></button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div className='Todo'>
-                            <label for="flexSwitchCheckDefault" style={{ textDecoration: isCompleted ? "line-through" : "none" }}> {title}</label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <button onClick={delTask} className='btn btn-danger'>Delete</button>
-                    </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     )
 }
-
-
-
-{/* <div className='form-check form-switch'>
-            <input className='form-check-input' type="checkbox" role="switch" id="flexSwitchCheckDefault" defaultChecked={isCompleted} onClick={chngSta} />
-            <table class="table table-dark table-striped" for="flexSwitchCheckDefault" style={{ textDecoration: isCompleted ? "line-through" : "none" }}> {title}</table>
-            <button onClick={delTask} className='btn btn-danger'>Delete</button>
-        </div> */}

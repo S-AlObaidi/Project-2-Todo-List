@@ -29,11 +29,16 @@ export default function Add(props) {
         props.getpend(false);
     }
 
+    const getData = () => {
+        props.getData();
+    }
+
+
     return (
-        <div className='Add'>
+        <div>
+            <Delete deleteAll={deleteAll} delcomp={delcomp} getfinsh={getfinish} getpend={getpend} getData={getData} />
             <input className='form-control' type="text" placeholder='Write new task 🖊' onChange={(e) => { setNewTitle(e.target.value) }} />
-            <button type='submit' className='btn btn-success' onClick={createTodo}>Create new task ✅</button>
-            <Delete deleteAll={deleteAll} delcomp={delcomp} getfinsh={getfinish} getpend={getpend} />
+            <button type='submit' className='btn btn-success m-2' onClick={createTodo}>CREATE NEW TASK</button>
         </div>
     )
 }
